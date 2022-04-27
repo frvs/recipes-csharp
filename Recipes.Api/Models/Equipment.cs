@@ -1,4 +1,4 @@
-﻿namespace RecipesApi.Models
+﻿namespace Recipes.Api.Models
 {
     public class Equipment
     {
