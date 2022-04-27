@@ -15,4 +15,9 @@ e também, queries 'tipadas', ou seja, geradas automaticamente, sem a chance de 
 um problema de um tipo são tudo de bom. =)
 
 ## dúvidas sobre os models
-equipment, food, ingredient, recipe, tool
+
+Food.Hero - o que é?
+Ingredient.Quantity - virou int
+Ingredient.Unit - o que é?
+Tool.Hero - o que é?
+Recipe.Hero - o que é?
