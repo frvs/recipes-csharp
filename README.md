@@ -22,3 +22,15 @@ Ingredient.Unit - o que é?
 Tool.Hero - o que é?
 Recipe.Hero - o que é?
 ------- dúvidas até aqui sanadas pelo twitter
+
+## por que dto e models se a diferença é tão pouca?
+também estou me perguntando xD. talvez até o final do projeto eu mude isso, mas...
+1. não quero expor ids no input do controller (não queremos que o usuário sete o id de algo e sim o banco)
+2. a separação entre 'viewmodel' (objeto da tela) e 'model' (objeto do banco) faz sentido na maioria dos casos
+3. partindo do pressuposto q viewmodel e model podem evoluir pra coisas distintas, 
+é melhor ter dois objetos parecidos do q deixar um acoplamento q não faz sentido
+
+ps. se o business falar q essa diferença nao faz sentido, entao n faz. kk
+
+## por que default values nos reference types nos models/dtos?
+sem tempo pra null reference exception, irmao
