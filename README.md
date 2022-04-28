@@ -21,3 +21,4 @@ Ingredient.Quantity - virou int
 Ingredient.Unit - o que é?
 Tool.Hero - o que é?
 Recipe.Hero - o que é?
+------- dúvidas até aqui sanadas pelo twitter
