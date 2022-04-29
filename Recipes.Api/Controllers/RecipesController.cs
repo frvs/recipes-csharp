@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Recipes.Api.Dtos;
-using Recipes.Api.Models;
 using Recipes.Api.Services;
 
 namespace Recipes.Api.Controllers
@@ -18,7 +17,7 @@ namespace Recipes.Api.Controllers
 
         [HttpPost]
         public IActionResult InsertRecipe([FromBody] RecipeDto recipeDto)
-        {
+           {
 
             var recipe = _service.InsertRecipe(recipeDto);
 

@@ -8,7 +8,7 @@ namespace Recipes.Api.Models
         public string Name { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
         public string Hero { get; set; } = string.Empty;
-        public IEnumerable<Ingredient> Ingredients { get; set; }
-        public IEnumerable<Equipment> Equipments { get; set; }
+        public IEnumerable<Ingredient> Ingredients { get; set; } = new List<Ingredient>();
+        public IEnumerable<Equipment> Equipments { get; set; } = new List<Equipment>();
     }
 }
