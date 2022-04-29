@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using Recipes.Api.DataAccess;
 using Recipes.Api.Dtos;
 using Recipes.Api.Models;
 
@@ -11,11 +13,26 @@ namespace Recipes.Api.Services
 
     public class RecipesService : IRecipeService
     {
+        private readonly IRecipesRepository _repository;
+
+        public RecipesService(IRecipesRepository repository)
+        {
+            _repository = repository;
+        }
+
         public Recipe InsertRecipe(RecipeDto recipeDto)
         {
             var recipe = ToRecipe(recipeDto);
 
-            return recipe;
+            var (succesful, recipeFromDb) = _repository.InsertRecipe(recipe);
+
+            if(!succesful)
+            {
+                // i could handle better this exception but......... i think it isnt necessary
+                throw new Exception();
+            }
+
+            return recipeFromDb;
         }
 
         // this method could be extracted to a translator class but...
