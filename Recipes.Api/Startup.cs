@@ -1,8 +1,11 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Recipes.Api.DataAccess;
+using Recipes.Api.Services;
 
 namespace Recipes.Api
 {
@@ -19,6 +22,13 @@ namespace Recipes.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddDbContext<RecipeDbContext>(options =>
+            {
+                // temporarily it will be a in memory database (in the future maybe a sqlite, maybe a sqlserver/postgres db... im thinking about it)
+                options.UseInMemoryDatabase("connectionstr");
+            });
+            services.AddScoped<IRecipesRepository, RecipesRepository>();
+            services.AddScoped<IRecipeService, RecipesService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
